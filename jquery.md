@@ -22,13 +22,15 @@ This tutorial is not meant to serve as a more formal introduction to JavaScript 
 
 ## Using this Document
 
-This document contains a series of several sections, each of which explains a certain feature of jQuery that is valuable in building web applications. All of the code referenced inside the guide will be available on Github. 
+This document contains a series of several sections, each of which explains a certain feature of jQuery that is valuable in building web applications.
 
 ### Running the Sample Code
 
 Unlike many other programming languages, JavaScript runs in the browser. This means that JavaScript code does not need to be compiled, and is instead run through within HTML. 
 
 Therefore, to run the sample code, one must merely open the provided HTML files in her browser of choice (Chrome, Safari, Firefox).
+
+In addition, one can also 
 
 ## Table of Contents
 
@@ -283,20 +285,113 @@ This would yield the value `undefined` to indicate that no value for that proper
 
 <a id="jquery"></a>
 ## 2.0 The Basics of jQuery
-jQuery is what we're going to start here.
+jQuery makes it super easy for us to utilize the JavaScript we just learned in order to manipulate our HTML page. Here, we will show you how we can start to use it on our web pages.
 
 <a id="selectors"></a>
 ### 2.1 Selectors
+The selectors that we looked at in the preface are what jQuery is built on. To select an element in jQuery, we essentially use its HTML selector as follows:
+
+```javascript
+$("p.some_class");
+```
+
+It's as simple as that! The `$` is the most characteristic character in all of jQuery, and you'll see that it appears everywhere. This selection returns an array, so we can access each element through our array syntax. So, given:
+
+```html
+<div id="content">
+    <p>Paragraph One</p>
+    <p>Paragraph Two</p>
+    <p>Paragraph Three</p>
+</div>
+```
+
+```javascript
+var contentParagraphs = $("#content p");
+console.log(contentParagraphs[1]); // Paragraph Two
+console.log(contentParagraphs.length); // 3
+```
+
+Once we have the elements we want to interact with in our JavaScript code, it becomes quite easy for us to add to, change, or remove from the DOM.
 
 <a id="document"></a>
 ### 2.2 `document.ready`
+When we are utilizing elements that appear in the DOM, it is hugely important for us that we don't execute our code until the document is ready and has been created. For this reason, jQuery has a hugely important method called `document.ready` that allows us to wait until our document is ready until we execute our code. 
+
+The function takes a function, and looks as follows:
+
+```javascript
+$(document).ready(function() {
+    // Include all the JavaScript we want to run
+    console.log("Our document is ready!");
+});
+```
+
+Because this is used so often, jQuery has shortened it for us to be simply:
+
+```javascript
+$(function() {
+    // Include all the JavaScript we want to run
+    console.log("Our document is ready using our new, shortened syntax!");
+});
+```
+
+It is recommended that all the code that is wanted on a webpage be wrapped in this `document.ready` call, as it assures that all the elements we expect to be there will be there.
 
 <a id="creation"></a>
 ### 2.3 Creating New Elements
+We can use jQuery to create new elements as well. We do this by simply including HTML inside our `$` selector. For example, say we have a `div` containing some links:
 
+```html
+<div id="links">
+    <a href="http://www.google.com">Google</a>
+    <a href="http://facebook.com">Facebook</a>
+</div>
+```
+
+Now, say inside our JavaScript code, say we want to create a new link, and add it to our section of links. We can do that by creating a new element:
+
+```javascript
+var newLink = $("<a href='http://www.adicu.com'>ADICU</a>");
+```
+
+Then, by selecting the `div` using our previous selectors, we can add it:
+
+```javascript
+$("#links").append(newLink);
+```
+
+Following this, our webpage will now look as follows:
+
+```html
+<div id="links">
+    <a href="http://www.google.com">Google</a>
+    <a href="http://facebook.com">Facebook</a>
+    <a href="http://www.adicu.com">ADICU</a>
+</div>
+```
+
+The ability to create new elements will be hugely important to us as we continue making interactive webpages.
 <a id="iteration"></a>
 ### 2.4 Iterating Through Elements
+Because our selections yield arrays, we can iterate through each of the items in the array using the array syntax. For example, say we have a list:
 
+```html
+<ul>
+    <li class="veggie">Broccoli</li>
+    <li class="veggie">Carrots</li>
+    <li class="veggie">Tomatoes</li>
+</ul>
+```
+
+Say we want to add the number of the element in bold before each element in the list. We do that using the following code:
+
+```javascript
+$("li.veggie").each(function(index, element) {
+    $(element).prepend('<b>' + index + ': </b>'); 
+});
+```
+
+The code goes through each element in the selection, executing a function which takes both the index and the element at that index. The code then prepends some HTML to each of the elements in our selection. It's as easy as that!
 ___________
 
 ## Additional Resources
