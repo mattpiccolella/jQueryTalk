@@ -391,7 +391,18 @@ $("li.veggie").each(function(index, element) {
 });
 ```
 
-The code goes through each element in the selection, executing a function which takes both the index and the element at that index. The code then prepends some HTML to each of the elements in our selection. It's as easy as that!
+The code goes through each element in the selection, executing a function which takes both the index and the element at that index. The code then prepends some HTML to each of the elements in our selection. Our new HTML will look as follows:
+
+```html
+<ul>
+    <li class="veggie"><b>1: </b>Broccoli</li>
+    <li class="veggie"><b>2: </bCarrots</li>
+    <li class="veggie"><b>3: </bTomatoes</li>
+</ul>
+```
+It's as simple as that to make substantive changes to a webpage after it has been loaded!
+
+
 ___________
 
 ## Additional Resources
