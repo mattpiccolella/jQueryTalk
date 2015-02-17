@@ -32,13 +32,78 @@ Therefore, to run the sample code, one must merely open the provided HTML files 
 
 ## Table of Contents
 
--   [Preface: Basics of HTML](#html)
+-   [Preface: HTML and the DOM](#html)
 -   [Additional Resources](#additionalresources)
 
 
 ------------------------------
-## Preface: Basics of HTML
-This is where the basics of HTML will go.
+## Preface: HTML/CSS and the DOM
+Web pages are created using a language called HTML. When HTML is loaded by the browser, it creates something called a DOM (Document Object Model), which is a standardized, tree-like structure that provides a structured way to access and manipulate elements within the document. JavaScript, and in particular jQuery, use the DOM in order to allow you to retrieve, and more importantly, manipulate elements (buttons, divs, links, etc.) on an HTML page.
+
+To be able to retrieve elements from the DOM using jQuery, we have to have a way to be able to identify different elements of an HTML page. Generally, there are three ways to identify HTML elements, each of which is used heavily in both CSS and Javascript/jQery.
+
+### Tag/Element
+```html
+<a href="https://adicu.com">ADICU</a>
+<p>ADI is awesome!</p>
+```
+Here, we can identify a link by its tag "a" or a paragraph by its tag "p". For example, if in CSS, we wanted to write a rule to apply to each link, we could write:
+
+```css
+a {
+    color: blue;
+}
+```
+
+### Class
+```html
+<p class="sampleclass">Some sample paragraph.</p>
+```
+We can select a link by its class "sampleclass" by preceding it with a period (".sampleclass"). A CSS rule to apply to each element of class "sampleclass" would be:
+
+```css
+.sampleclass {
+    text-align: center;
+}
+```
+
+### ID
+```html
+<h1 id="specificheader">This One Header</h1>
+```
+To select an element by its ID, we include a "#" before its name. A CSS rule to pick out this specific link would be:
+
+```css
+#specificheader {
+    color:white;
+}
+```
+An important thing to note here is that an ID is meant to be unique, and therefore good for identifying a single occurrence of an element.
+
+### Multiple Selectors
+We can chain these selectors together to be even more specific. Say, for example, we wanted to select all links of a certain class. We could write:
+
+```css
+a.some_class
+```
+
+Or, say we had a div with a certain ID, and that div has some paragraph elements inside of it, as such:
+
+```html
+<div id="content">
+    <p>Paragraph One</p>
+    <p>Paragraph Two</p>
+    <p>Paragraph Three</p>
+</div>
+```
+
+To select the links inside this div, we could use both the ID and tag selector by writing
+
+```css
+#content p
+```
+
+This identification process is very similar to the process used in CSS, and will be hugely useful for us in using jQuery.
 
 ___________
 
@@ -50,7 +115,7 @@ Along with this tutorial, there is a wealth of information available on JavaScri
 
 [jQuery Fundamentals][fundamentals]
 
-[Learn jQuery][pydoc]
+[Learn jQuery][learn_jquery]
 
 [ADI Resources][learn]
 
