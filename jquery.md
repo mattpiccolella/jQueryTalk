@@ -7,7 +7,6 @@ Written and developed by [Matt Piccolella](mailto:matthew@adicu.com) and [ADI](a
 
 Credit to [Eloquent Javascript][eloquent], [jQuery Fundamentals][fundamentals], and [Learn jQuery][learn_jquery].
 
-<a href="#top" class="top" id="getting-started">Top</a>
 ## Getting Started: FAQs
 
 Before we can learn jQuery, we must understand what it is, how we will use it, and what we can expect to learn from this guide. 
@@ -31,7 +30,6 @@ Unlike many other programming languages, JavaScript runs in the browser. This me
 
 Therefore, to run the sample code, one must merely open the provided HTML files in her browser of choice (Chrome, Safari, Firefox).
 
-<a href="#top" class="top" id="table-of-contents">Top</a>
 ## Table of Contents
 
 -   [Preface: Basics of HTML](#html)
@@ -39,13 +37,11 @@ Therefore, to run the sample code, one must merely open the provided HTML files 
 
 
 ------------------------------
-<a href="#top" class="top" id="comments">Top</a>
 ## Preface: Basics of HTML
 This is where the basics of HTML will go.
 
 ___________
 
-<a href="#top" class="top" id="additionalresources">Top</a>
 ## Additional Resources
 
 Along with this tutorial, there is a wealth of information available on JavaScript and jQuery all across the web. Below are some good places to start:
@@ -67,4 +63,5 @@ Along with this tutorial, there is a wealth of information available on JavaScri
 [learn]: https://adicu.com/resources
 [codecademy]: http://www.codecademy.com/
 [jquery]: http://jquery.com/
+[adi]: https://adicu.com
 
