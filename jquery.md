@@ -419,10 +419,56 @@ Many more functions exist; if you can think of something you'd like to get/set, 
 
 <a id="events"></a>
 ## 3.0 Events and Delegation
-One of the main features of jQuery is its handling of events.
+One of the main features of jQuery is its handling of events that happen on the browser; these events include clicks, mouse movements, form submissions, and many other things. Here, we will learn how to respond to these events using jQuery.
 
 <a id="jquery-html"></a>
 ### Preface: Running jQuery from HTML
+Now that our jQuery code has gone beyond small code snippets, it is important for us to remember how to link JavaScript and how to load jQuery inside of an HTML file.
+
+To link jQuery, we simply include a `script` tag inside of our `head` inside the HTML page, as follows:
+
+**`index.html`**
+```html
+<html>
+    <head>
+        <title>Matt's Page</title>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+    </body>
+</html>
+```
+
+Now, any JavaScript we run inside this HTML page will have access to the jQuery framework. The installation process is now complete!
+
+Before, we discussed how we want to place all our code inside a single function, `document.ready`. We create an external file called `script.js` and place all our jQuery inside of there, as follows:
+
+**`script.js`**
+```javascript
+$(document).ready(function() {
+    // Include all the JavaScript we want to run inside this HTML page
+    console.log("Our document is ready!");
+});
+```
+
+Now, we simply link to it in our HTML page the same way we linked to jQuery:
+
+**`index.html`**
+```html
+<html>
+    <head>
+        <title>Matt's Page</title>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+    </body>
+</html>
+```
+Now, as long as our JavaScript file is located in the same directory, it will load correctly. IMPORTANT: we must link to jQuery before we link to our own JavaScript file. Our JavaScript file depends on the jQuery library, so we need to have loaded that first before calling our own file.
+
 
 ___________
 
