@@ -48,6 +48,8 @@ In addition, one can also
     - [2.3 Creating New Elements](#creation)
     - [2.4 Iterating Through Elements](#iteration)
     - [2.5 More and More](#more)
+-   [3.0 Events and Delegation](#events)
+    - [Preface: Running jQuery from HTML](#jquery-html)
 -   [Additional Resources](#additionalresources)
 
 
@@ -415,6 +417,12 @@ There are so many more things that can be done using jQuery to select and manipu
 
 Many more functions exist; if you can think of something you'd like to get/set, jQuery most likely has a way to. More documentation on these, what are collectively referred to as **jQuery Core**, is available [here][learn_jquery].
 
+<a id="events"></a>
+## 3.0 Events and Delegation
+One of the main features of jQuery is its handling of events.
+
+<a id="jquery-html"></a>
+### Preface: Running jQuery from HTML
 
 ___________
 
