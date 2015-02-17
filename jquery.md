@@ -33,10 +33,16 @@ Therefore, to run the sample code, one must merely open the provided HTML files 
 ## Table of Contents
 
 -   [Preface: HTML and the DOM](#html)
+-   [1.0 The Basics of JavaScript](#javascript)
+    - [1.1 Variables](#variables)
+    - [1.2 Functions](#functions)
+    - [1.3 Objects](#objects)
+    - [1.4 Arrays](#arrays)
 -   [Additional Resources](#additionalresources)
 
 
 ------------------------------
+<a id="html"></a>
 ## Preface: HTML/CSS and the DOM
 Web pages are created using a language called HTML. When HTML is loaded by the browser, it creates something called a DOM (Document Object Model), which is a standardized, tree-like structure that provides a structured way to access and manipulate elements within the document. JavaScript, and in particular jQuery, use the DOM in order to allow you to retrieve, and more importantly, manipulate elements (buttons, divs, links, etc.) on an HTML page.
 
@@ -51,13 +57,14 @@ Here, we can identify a link by its tag "a" or a paragraph by its tag "p". For e
 
 ```css
 a
+p
 ```
 
 ### Class
 ```html
 <p class="sampleclass">Some sample paragraph.</p>
 ```
-We can select a link by its class "sampleclass" by preceding it with a period, as such:
+We can select an element by its class "sampleclass" by preceding it with a period, as such:
 
 ```css
 .sampleclass
@@ -72,7 +79,7 @@ To select an element by its ID, we include a "#" before its name. Its select wou
 ```css
 #specificheader
 ```
-An important thing to note here is that an ID is meant to be unique, and therefore good for identifying a single occurrence of an element.
+An important thing to note here is that an ID is meant to be unique, and therefore good for an element that is meant to occur just once.
 
 ### Multiple Selectors
 We can chain these selectors together to be even more specific. Say, for example, we wanted to select all links of a certain class:
@@ -97,7 +104,7 @@ Or, say we had a div with a certain ID, and that div has some paragraph elements
 </div>
 ```
 
-To select the links inside this div, we could use both the ID and tag selector by writing
+To select the links inside this div, we could use both the ID and tag selector by writing:
 
 ```css
 #content p
@@ -112,6 +119,23 @@ a.blue_link {
 ```
 
 The focus of JavaScript is being able to select these elements, so a solid understanding of this section is hugely important to understanding jQuery.
+
+<a id="javascript"></a>
+## 1.0 The Basics of Javascript
+JavaScript is a language. Yes it is.
+
+<a id="variables"></a>
+### 1.1 Variables
+
+<a id="functions"></a>
+### 1.2 Functions
+
+<a id="objects"></a>
+### 1.3 Objects
+
+<a id="arrays"></a>
+### 1.4 Arrays
+
 
 ___________
 
