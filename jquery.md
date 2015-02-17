@@ -39,6 +39,12 @@ Therefore, to run the sample code, one must merely open the provided HTML files 
     - [1.2 Functions](#functions)
     - [1.3 Objects](#objects)
     - [1.4 Arrays](#arrays)
+    - [1.5 Undefined v. Null](#undefined)
+-   [2.0 The Basics of jQuery](#jquery)
+    - [2.1 Selectors](#selectors)
+    - [2.2 `document.ready`](#document)
+    - [2.3 Creating New Elements](#creation)
+    - [2.4 Iterating Through Elements](#iteration)
 -   [Additional Resources](#additionalresources)
 
 
@@ -125,6 +131,7 @@ The focus of JavaScript is being able to select these elements, so a solid under
 ## 1.0 The Basics of Javascript
 JavaScript is the programming language of the web. It is used on nearly every website to do all sorts of things, and jQuery is built directly on top of it. It is somewhat similar to other programming languages, like Python, in its basics, but it ultimately prides itself on its uniqueness. Here, we will define some of the most basic concepts of JavaScript.
 
+<a id="console"></a>
 ## Preface: Running Code in the Console
 To run JavaScript code, we can type it into the JavaScript console. Thus, if you'd like to write the code that I have typed, you can open the JavaScript console in your browser of choice. Here is a screenshot of the browser in Chrome:
 
@@ -252,7 +259,7 @@ numberArray.forEach(function(number) {
     console.log(number);
 });
 ```
-
+<a id="undefined"></a>
 ### 1.5 Undefined v. Null
 One very important concept in JavaScript is the difference between `undefine`and `null`. 
 
@@ -273,6 +280,23 @@ console.log(person.favoriteFood);
 ```
 
 This would yield the value `undefined` to indicate that no value for that property has yet been set.
+
+<a id="jquery"></a>
+## 2.0 The Basics of jQuery
+jQuery is what we're going to start here.
+
+<a id="selectors"></a>
+### 2.1 Selectors
+
+<a id="document"></a>
+### 2.2 `document.ready`
+
+<a id="creation"></a>
+### 2.3 Creating New Elements
+
+<a id="iteration"></a>
+### 2.4 Iterating Through Elements
+
 ___________
 
 ## Additional Resources
