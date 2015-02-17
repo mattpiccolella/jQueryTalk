@@ -396,8 +396,8 @@ The code goes through each element in the selection, executing a function which 
 ```html
 <ul>
     <li class="veggie"><b>1: </b>Broccoli</li>
-    <li class="veggie"><b>2: </bCarrots</li>
-    <li class="veggie"><b>3: </bTomatoes</li>
+    <li class="veggie"><b>2: </b>Carrots</li>
+    <li class="veggie"><b>3: </b>Tomatoes</li>
 </ul>
 ```
 It's as simple as that to make substantive changes to a webpage after it has been loaded!
