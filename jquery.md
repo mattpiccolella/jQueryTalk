@@ -47,6 +47,7 @@ In addition, one can also
     - [2.2 `document.ready`](#document)
     - [2.3 Creating New Elements](#creation)
     - [2.4 Iterating Through Elements](#iteration)
+    - [2.5 More and More](#more)
 -   [Additional Resources](#additionalresources)
 
 
@@ -401,6 +402,18 @@ The code goes through each element in the selection, executing a function which 
 </ul>
 ```
 It's as simple as that to make substantive changes to a webpage after it has been loaded!
+
+<a id="more"></a>
+### 2.5 More and More
+There are so many more things that can be done using jQuery to select and manipulate elements in the DOM. These are just a few highlights:
+
+`add/removeClass` - add or remove a CSS class from an element
+`filter` - allow you to filter a selection using a second selector
+`css` - add a CSS rule to an element
+`attr` - allows you to set an attribute of an element, such as `href` of an `a`
+`val` - get the value of an element
+
+Many more functions exist; if you can think of something you'd like to get/set, jQuery most likely has a way to. More documentation on these, what are collectively referred to as **jQuery Core**, is available [here][learn_jquery].
 
 
 ___________
