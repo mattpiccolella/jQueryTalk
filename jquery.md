@@ -47,41 +47,41 @@ To be able to retrieve elements from the DOM using jQuery, we have to have a way
 <a href="https://adicu.com">ADICU</a>
 <p>ADI is awesome!</p>
 ```
-Here, we can identify a link by its tag "a" or a paragraph by its tag "p". For example, if in CSS, we wanted to write a rule to apply to each link, we could write:
+Here, we can identify a link by its tag "a" or a paragraph by its tag "p". For example:
 
 ```css
-a {
-    color: blue;
-}
+a
 ```
 
 ### Class
 ```html
 <p class="sampleclass">Some sample paragraph.</p>
 ```
-We can select a link by its class "sampleclass" by preceding it with a period (".sampleclass"). A CSS rule to apply to each element of class "sampleclass" would be:
+We can select a link by its class "sampleclass" by preceding it with a period, as such:
 
 ```css
-.sampleclass {
-    text-align: center;
-}
+.sampleclass
 ```
 
 ### ID
 ```html
 <h1 id="specificheader">This One Header</h1>
 ```
-To select an element by its ID, we include a "#" before its name. A CSS rule to pick out this specific link would be:
+To select an element by its ID, we include a "#" before its name. Its select would thus be:
 
 ```css
-#specificheader {
-    color:white;
-}
+#specificheader
 ```
 An important thing to note here is that an ID is meant to be unique, and therefore good for identifying a single occurrence of an element.
 
 ### Multiple Selectors
-We can chain these selectors together to be even more specific. Say, for example, we wanted to select all links of a certain class. We could write:
+We can chain these selectors together to be even more specific. Say, for example, we wanted to select all links of a certain class:
+
+```html
+<a class="some_class">Desired Link</a>
+```
+
+We could write:
 
 ```css
 a.some_class
@@ -103,7 +103,15 @@ To select the links inside this div, we could use both the ID and tag selector b
 #content p
 ```
 
-This identification process is very similar to the process used in CSS, and will be hugely useful for us in using jQuery.
+This identification process is very similar to the process used in CSS. For example, say we wanted to select each of the links of class "blue_link" and make them blue. We could write:
+
+```css
+a.blue_link {
+    color: blue;
+}
+```
+
+The focus of JavaScript is being able to select these elements, so a solid understanding of this section is hugely important to understanding jQuery.
 
 ___________
 
