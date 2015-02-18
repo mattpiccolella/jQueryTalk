@@ -55,6 +55,12 @@ In addition, one can also type JavaScript code into the JavaScript console, whic
     - [3.3 Hover](#hover)
     - [3.4 Scroll](#scroll)
     - [3.5 Key Press](#keypress)
+-   [4.0 AJAX](#ajax)
+    - [4.1 What is AJAX?](#whatajax)
+    - [4.2 Handlers](#handlers)
+    - [4.3 Get Request](#get)
+    - [4.4 Post Requests](#post)
+    - [4.5 Error Handling](#error)
 -   [Additional Resources](#additionalresources)
 
 
@@ -610,6 +616,25 @@ $(document).ready(function() {
 ```
 
 Try it! Whenever we enter a new character, we'll see that the number of characters entered changes on our screen! It's like magic!
+
+<a id="ajax"></a>
+## 4.0 AJAX
+AJAX is a super useful method of making HTTP requests to internet forms and APIs without having to reload the page. We'll give a simple example of how to utilize it to make awesome pages.
+
+<a id="whatajax"></a>
+### 4.1 What is AJAX?
+
+<a id="handlers"></a>
+### 4.2 Handlers
+
+<a id="get"></a>
+### 4.3 Get Request
+
+<a id="post"></a>
+### 4.4 Post Request
+
+<a id="error"></a>
+### 4.5 Error Handling
 ___________
 
 ## Additional Resources
