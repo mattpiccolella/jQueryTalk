@@ -57,10 +57,9 @@ In addition, one can also type JavaScript code into the JavaScript console, whic
     - [3.5 Key Press](#keypress)
 -   [4.0 AJAX](#ajax)
     - [4.1 What is AJAX?](#whatajax)
-    - [4.2 Handlers](#handlers)
-    - [4.3 Get Request](#get)
-    - [4.4 Post Requests](#post)
-    - [4.5 Error Handling](#error)
+    - [4.2 Get Request](#get)
+    - [4.3 Post Requests](#post)
+    - [4.4 Error Handling](#error)
 -   [Additional Resources](#additionalresources)
 
 
@@ -623,18 +622,18 @@ AJAX is a super useful method of making HTTP requests to internet forms and APIs
 
 <a id="whatajax"></a>
 ### 4.1 What is AJAX?
+AJAX stands for "asynchronous JavaScript and XML." Essentially, it is a way for us to load data form a server without requiring a page reload. Say, for example, we have a website that shows the most up-to-date sports scores. To get new scores, we would have to make the request on the backend and reload the page each time. However, using jQuery, we could write some code to query for new results every 10 seconds, and update the screen without requiring the user to reload the page.
 
-<a id="handlers"></a>
-### 4.2 Handlers
+You may be unfamiliar with the word "asynchronous." Basically it means that the placing of the request is done in the background, so our entire page doesn't have to wait on the retrieving of the data. Instead, we can simply give the request a function to execute upon its finishing; for example, once our request of our updated sports scores has completed, we can call a function to update our webpage with the updated scores. This is very similar to the concept of event delegation that we saw earlier.
 
 <a id="get"></a>
-### 4.3 Get Request
+### 4.2 Get Request
 
 <a id="post"></a>
-### 4.4 Post Request
+### 4.3 Post Request
 
 <a id="error"></a>
-### 4.5 Error Handling
+### 4.4 Error Handling
 ___________
 
 ## Additional Resources
