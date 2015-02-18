@@ -24,13 +24,13 @@ This tutorial is not meant to serve as a more formal introduction to JavaScript 
 
 This document contains a series of several sections, each of which explains a certain feature of jQuery that is valuable in building web applications.
 
-### Running the Sample Code
+### Running JavaScript code
 
 Unlike many other programming languages, JavaScript runs in the browser. This means that JavaScript code does not need to be compiled, and is instead run through within HTML. 
 
-Therefore, to run the sample code, one must merely open the provided HTML files in her browser of choice (Chrome, Safari, Firefox).
+Therefore, to run the sample code, one must merely open an HTML file, which has JavaScript code attached, in her browser of choice (Chrome, Safari, Firefox). We will do this in the second section of the course.
 
-In addition, one can also 
+In addition, one can also type JavaScript code into the JavaScript console, which can be opened from within a browser. We will discuss how to do this in the first part of the class.
 
 ## Table of Contents
 
@@ -44,7 +44,7 @@ In addition, one can also
     - [1.5 Undefined v. Null](#undefined)
 -   [2.0 The Basics of jQuery](#jquery)
     - [2.1 Selectors](#selectors)
-    - [2.2 `document.ready`](#document)
+    - [2.2 `$(document).ready()`](#document)
     - [2.3 Creating New Elements](#creation)
     - [2.4 Iterating Through Elements](#iteration)
     - [2.5 More and More](#more)
@@ -65,11 +65,10 @@ To be able to retrieve elements from the DOM using jQuery, we have to have a way
 <a href="https://adicu.com">ADICU</a>
 <p>ADI is awesome!</p>
 ```
-Here, we can identify a link by its tag `a` or a paragraph by its tag `p`. For example:
+Here, we can identify a link by its tag `a`. For example:
 
 ```css
 a
-p
 ```
 
 ### Class
@@ -142,7 +141,7 @@ To run JavaScript code, we can type it into the JavaScript console. Thus, if you
 
 ![JS Console](https://dl.dropboxusercontent.com/s/91l4s20ycafliqp/JavaScript%20console.png)
 
-The console is very important to JavaScript development, and is very useful for debugging.
+The console is very important to JavaScript development, and is very useful for debugging. To open the console in Google Chrome, click the menu at the top right hand corner of the screen, click `More tools` at the bottom of the menu, and then click `JavaScript Console`. The process should be similar in other browsers.
 
 <a id="variables"></a>
 ### 1.1 Variables
@@ -189,16 +188,11 @@ Something that is particuarly unique about JavaScript is that functions are what
 var add = function(x,y) {
     return x + y;
 }
-// Function that takes a math function, two numbers, and applies it n times
-var applyNTimes(mathFunction, x, y, n) {
-    var i = 0;
-    var sum = 0;
-    while (i < n) {
-        sum += addFunction(x,y);
-    }
-    n += 1;
+// Function that takes a math function and applies it with 42 and x.
+var applyTo42(mathFunction, x) {
+    return mathFunction(x, 42);
 }
-var result = addNTimes(add,3,5,10); // 150
+var result = applyTo42(add, 50); // 92
 ```
 
 Thus, here, we define a function and set it equal to a variable. Then, we define another function that takes a function as one of its parameters, and then call it by passing our original function.
@@ -244,16 +238,26 @@ var person = {
 
 Thus, if we wanted to call this function of the object, we simply call `person.describe()`.
 
-Notice the use of the keyword `this`. That is used to refer to the object itself. Thus, to access the properties `name`, `age`, and `self`, we can simply use the keyword `this` to indicate the object in which the function resides. This is similar to Java's `this` keyword or Python's `self` keyword.
+Notice the use of the keyword `this`. `this` is used to refer to the object itself. Thus, to access the properties `name`, `age`, and `self`, we can simply use the keyword `this` to indicate the object in which the function resides. This is similar to Java's `this` keyword or Python's `self` keyword.
 
 <a id="arrays"></a>
 ### 1.4 Arrays
-Arrays are just as they are in other programming languages:
+Arrays in JavaScript are very similar to arrays in other programming languages; we set and get using the bracket notation, and can access its length:
 
 ```javascript
 var numberArray = [1,2,3,4,5,6];
 console.log(numberArray[2]) # 3
 console.log(numberArray.length) # 6
+```
+
+However, there are also some other handy methods:
+
+```javascript
+var numberArray = [3,2,1,4,5,6];
+numberArray.pop(); // Removes the last element, [3,2,1,4,5]
+numberArray.push(10); // Adds element at the end, [3,2,1,4,5,10]
+numberArray.sort(); // Sorts the array, [1,2,3,4,5,10]
+numberArray.reverse(); // Reverses the array [10,5,4,3,2,1]
 ```
 
 One interesting aspect is the `forEach` method in the arrays, which allows us to pass a function which is executed for each item in an array:
@@ -317,8 +321,8 @@ console.log(contentParagraphs.length); // 3
 Once we have the elements we want to interact with in our JavaScript code, it becomes quite easy for us to add to, change, or remove from the DOM.
 
 <a id="document"></a>
-### 2.2 `document.ready`
-When we are utilizing elements that appear in the DOM, it is hugely important for us that we don't execute our code until the document is ready and has been created. For this reason, jQuery has a hugely important method called `document.ready` that allows us to wait until our document is ready until we execute our code. 
+### 2.2 `$(document).ready()`
+When we are utilizing elements that appear in the DOM, it is hugely important for us that we don't execute our code until the document is ready and has been created. For this reason, jQuery has a hugely important method called `$(document).ready()` that allows us to wait until our document is ready until we execute our code. 
 
 The function takes a function, and looks as follows:
 
@@ -338,7 +342,7 @@ $(function() {
 });
 ```
 
-It is recommended that all the code that is wanted on a webpage be wrapped in this `document.ready` call, as it assures that all the elements we expect to be there will be there.
+It is recommended that all the code that is wanted on a webpage be wrapped in this `$(document).ready()` call, as it assures that all the elements we expect to be there will be there.
 
 <a id="creation"></a>
 ### 2.3 Creating New Elements
@@ -357,7 +361,7 @@ Now, say inside our JavaScript code, say we want to create a new link, and add i
 var newLink = $("<a href='http://www.adicu.com'>ADICU</a>");
 ```
 
-Then, by selecting the `div` using our previous selectors, we can add it:
+Then, by selecting the `div` using our previous selectors, we can add it using the `append` function:
 
 ```javascript
 $("#links").append(newLink);
@@ -413,7 +417,7 @@ There are so many more things that can be done using jQuery to select and manipu
 - `filter` - allow you to filter a selection using a second selector
 - `css` - add a CSS rule to an element
 - `attr` - allows you to set an attribute of an element, such as `href` of an `a`
-- `val` - get the value of an element
+- `val` - get the value of an input element in a form
 
 Many more functions exist; if you can think of something you'd like to get/set, jQuery most likely has a way to. More documentation on these, what are collectively referred to as **jQuery Core**, is available [here][learn_jquery].
 
@@ -442,7 +446,7 @@ To link jQuery, we simply include a `script` tag inside of our `head` inside the
 
 Now, any JavaScript we run inside this HTML page will have access to the jQuery framework. The installation process is now complete!
 
-Before, we discussed how we want to place all our code inside a single function, `document.ready`. We create an external file called `script.js` and place all our jQuery inside of there, as follows:
+Before, we discussed how we want to place all our code inside a single function, `$(document).ready()`. We create an external file called `script.js` and place all our jQuery inside of there, as follows:
 
 **`script.js`**
 ```javascript
