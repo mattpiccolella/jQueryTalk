@@ -24,17 +24,6 @@ Run the following command to deploy to [learn.adicu.com/jquery](http://learn.adi
 
 All sample code is available by section in the `code/` folder, or at [learn.adicu.com/jquery/code.zip](http://learn.adicu.com/jquery/code.zip).
 
-#### Using Vagrant
-
-We support running with vagrant!  [Install and setup Vagrant](https://docs.vagrantup.com/v2/installation/index.html), and then:
-
-    $ vagrant up # launches the box
-    $ vagrant ssh # ssh into the box
-    # You are now in the vagrant instance
-    $ cd /vagrant # go to the code
-    $ cd <solutions folder> # Ex: cd webdev-solutions/1.3.2\ Dynamic\ Routes
-    # Run the solution # Ex: python app.py
-
 #### Directory Structure
 
 ##### build/
