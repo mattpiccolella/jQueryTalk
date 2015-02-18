@@ -55,11 +55,10 @@ In addition, one can also type JavaScript code into the JavaScript console, whic
     - [3.3 Hover](#hover)
     - [3.4 Scroll](#scroll)
     - [3.5 Key Press](#keypress)
--   [4.0 AJAX](#ajax)
-    - [4.1 What is AJAX?](#whatajax)
-    - [4.2 Get Request](#get)
-    - [4.3 Post Requests](#post)
-    - [4.4 Error Handling](#error)
+-   [4.0 More Topics](#topics)
+    - [4.1 AJAX](#whatajax)
+    - [4.2 Effects](#effects)
+    - [4.3 jQuery UI](#ui)
 -   [Additional Resources](#additionalresources)
 
 
@@ -617,23 +616,39 @@ $(document).ready(function() {
 Try it! Whenever we enter a new character, we'll see that the number of characters entered changes on our screen! It's like magic!
 
 <a id="ajax"></a>
-## 4.0 AJAX
+## 4.0 More Topics
 AJAX is a super useful method of making HTTP requests to internet forms and APIs without having to reload the page. We'll give a simple example of how to utilize it to make awesome pages.
 
 <a id="whatajax"></a>
-### 4.1 What is AJAX?
+### 4.1 AJAX
 AJAX stands for "asynchronous JavaScript and XML." Essentially, it is a way for us to load data form a server without requiring a page reload. Say, for example, we have a website that shows the most up-to-date sports scores. To get new scores, we would have to make the request on the backend and reload the page each time. However, using jQuery, we could write some code to query for new results every 10 seconds, and update the screen without requiring the user to reload the page.
 
 You may be unfamiliar with the word "asynchronous." Basically it means that the placing of the request is done in the background, so our entire page doesn't have to wait on the retrieving of the data. Instead, we can simply give the request a function to execute upon its finishing; for example, once our request of our updated sports scores has completed, we can call a function to update our webpage with the updated scores. This is very similar to the concept of event delegation that we saw earlier.
 
-<a id="get"></a>
-### 4.2 Get Request
+A GET request in AJAX using jQuery is as simple as:
 
-<a id="post"></a>
-### 4.3 Post Request
+```javascript
+$.get("http://someapi.com", function(data) {
+  alert( "Data Loaded: " + data );
+});
+```
+Thus, if we have some API that we want to query, maybe Twitter or Facebook, we can query it through the front-end and immediately have the response to work with, all without having to reload the page.
 
-<a id="error"></a>
-### 4.4 Error Handling
+<a id="effects"></a>
+### 4.2 Effects
+jQuery provides a library for adding effects to your webpage. Some of the most common animations are as follows:
+
+- `animate()` - animate a set of CSS properties
+- `fadeIn()` - fade to opaque on selected elements
+- `slideDown()`/`slideUp()` - display or hide certain elements with a sliding motion
+- `toggle()` - either display or hide a given element
+
+These effects can be super useful for lots of things on the web.
+
+<a id="ui"></a>
+### 4.3 jQuery UI
+jQuery also provides a set of UI elements that are built on top of their traditional library. These include things like autocomplete search, progress bars, select menus, and accordions. More details relating to that can be found [here][ui].
+
 ___________
 
 ## Additional Resources
@@ -658,4 +673,5 @@ Along with this tutorial, there is a wealth of information available on JavaScri
 [codecademy]: http://www.codecademy.com/
 [jquery]: http://jquery.com/
 [adi]: https://adicu.com
+[ui]: http://jqueryui.com/
 
