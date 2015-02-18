@@ -50,6 +50,11 @@ In addition, one can also type JavaScript code into the JavaScript console, whic
     - [2.5 More and More](#more)
 -   [3.0 Events and Delegation](#events)
     - [Preface: Running jQuery from HTML](#jquery-html)
+    - [3.1 Understanding Delegation](#delegation)
+    - [3.2 Click](#click)
+    - [3.3 Hover](#hover)
+    - [3.4 Scroll](#scroll)
+    - [3.5 Key Press](#keypress)
 -   [Additional Resources](#additionalresources)
 
 
@@ -473,7 +478,96 @@ Now, we simply link to it in our HTML page the same way we linked to jQuery:
 ```
 Now, as long as our JavaScript file is located in the same directory, it will load correctly. IMPORTANT: we must link to jQuery before we link to our own JavaScript file. Our JavaScript file depends on the jQuery library, so we need to have loaded that first before calling our own file.
 
+<a id="delegation"></a>
+### 3.1 Understanding Delegation
+jQuery is built around events. Let's look back at the `$(document).ready()` function that we used before:
 
+```javascript
+$(document).ready(function() {
+    // Include all the JavaScript we want to run inside this HTML page
+    console.log("Our document is ready!");
+});
+```
+
+Here, `$document.ready()` is an event that is "fired" by our browser when the document is loaded. jQuery is useful because it intercepts the events so that we don't have to. All we have to do is provide a function we want to run when that event happens, like the function we passed in the above example. What jQuery does is holds onto our code, and executes it each time it intercepts an event that has occurred. In development, this is referred to as **delegation**; we are delegating the processing of an event to a function that we pass to our event handler. Other examples of these events that we will look at include `click`, `hover`, `scroll`, and `keypress`.
+
+<a id="click"></a>
+### 3.2 Click
+One of the main functionalities of many webpages is responded to click events; if a user clicks on some part of the screen, we may want to load new data, hide certain elements, or some other action. This can be done using the `click` handler. Say, for instance, each time a button on our screen is clicked, we want to add some new text to a page. Here's how we do it:
+
+**index.html**
+```html
+<html>
+    <head>
+        <title>Matt's Page</title>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <a id="addbutton">Click me!</a>
+        <div id="content">
+        </div>
+    </body>
+</html>
+```
+
+**script.js**
+```javascript
+// Remember, include all your JavaScript code inside this function!
+$(document).ready(function() {
+    $("#addbutton").click(function() {
+        $("#content").append("<p>My name is Matt!</p>");
+    });
+});
+```
+
+Here, we select the `#addbutton` link that we added in our HTML file. We handle the `click` event for this element, meaning each time someone clicks on our link, we want the function we supply it to be called. Inside this function, we append an HTML tag to the `#content` div that we created in our HTML file. Try it our yourself!
+
+<a id="hover"></a>
+### 3.3 Hover
+Imagine if we're hovering over an element on the page, and we want to make some kind of a change as a result of that. For example, say we have an element that we want to not be on the screen when we're hovering, but on the screen when we are. Let's do that now:
+
+**index.html**
+```html
+<html>
+    <head>
+        <title>Matt's Page</title>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Hello World!</h1>
+        <a id="addbutton">Click me!</a>
+        <h2 id="hide">Try to hide me!</h2>
+        <div id="content">
+        </div>
+    </body>
+</html>
+```
+
+**script.js**
+```javascript
+$(document).ready(function() {
+    // More code
+    $("#addbutton").hover(
+      function() {
+        $("#hide").hide();
+      },
+      function() {
+        $("#hide").show();
+      }
+    );
+});
+```
+
+Here, we see that we pass two functions, the first which will execute when we hover over, and the second which will execute when we hover off. In our hover on function, we hide the `#hide` element, which hides our `h2` tag using the function `hide()`. In our hover off function, we show the `#hide` element, which shows our `h2` tag using the function `show()`.
+
+<a id="scroll"></a>
+### 3.4 Scroll
+
+<a id="keypress"></a>
+### 3.5 Key Press
 ___________
 
 ## Additional Resources
