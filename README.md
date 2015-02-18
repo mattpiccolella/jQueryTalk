@@ -565,9 +565,51 @@ Here, we see that we pass two functions, the first which will execute when we ho
 
 <a id="scroll"></a>
 ### 3.4 Scroll
+Maybe on our website we want to handle scroll events; if the reason scrolls past a certain point, for example, maybe they should be shown the toolbar anymore. We can handle this using our `scroll()` event. Let's change the title of the page to indicate that we have scrolled:
+
+**script.js**
+```javascript
+$(document).ready(function() {
+    // More code
+    $(document).scroll(function() {
+        $("title").text("SCROLLED");
+    });
+});
+```
+
+Here, we listen to the `document` element for the `scroll` event, and when we intercept the scroll event, we change the title of our page. This could be helpful to change the title of the page based on what section we have scrolled to.
 
 <a id="keypress"></a>
 ### 3.5 Key Press
+A really awesome feature of a lot of different websites is the use of autocomplete search. Based on the characters that you have entered thus far, we can select new results to show you. This can be used using the jQuery `keypress` event. Here, we will write a program that shows the number of characters a user has typed:
+
+**index.html**
+```html
+<html>
+    <head>
+        <title>Matt's Page</title>
+        <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <input type="text" id="autocomplete"></input>
+        <p id="keys">Keys Pressed: 0</p>
+    </body>
+</html>
+```
+
+**script.js**
+```javascript
+$(document).ready(function() {
+    var keysPressed = 0;
+    $("#autocomplete").keypress(function() {
+      keysPressed++;
+      $("#keys").text("Keys Pressed: " + keysPressed);
+    });
+});
+```
+
+Try it! Whenever we enter a new character, we'll see that the number of characters entered changes on our screen! It's like magic!
 ___________
 
 ## Additional Resources

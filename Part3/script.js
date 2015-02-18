@@ -10,4 +10,12 @@ $(document).ready(function() {
         $("#hide").show();
       }
     );
+    $(document).scroll(function() {
+        $("title").text("SCROLLED");
+    });
+    var keysPressed = 0;
+    $("#autocomplete").keypress(function() {
+      keysPressed++;
+      $("#keys").text("Keys Pressed: " + keysPressed);
+    });
 });
